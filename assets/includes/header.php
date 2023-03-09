@@ -1,3 +1,7 @@
+<?php ob_start(); ?>
+<?php include "admin/includes/database.php"; ?>
+<?php include "admin/includes/functions.php"; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +9,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>OnePage Bootstrap Template - Index</title>
+    <title>LUMS - Leading University Management Systems</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -41,21 +45,33 @@
 
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a class="nav-link" href="faculty.php">Faculty</a></li>
-                    <li><a class="nav-link" href="#about">About</a></li>
-                    <li><a class="nav-link" href="#services">Services</a></li>
-                    <li><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                    <li><a class="nav-link " href="#team">Team</a></li>
-                    <li><a class="nav-link " href="#pricing">Pricing</a></li>
-                    <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+                    <li class="dropdown"><a href="#"><span>Faculty</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
-                            <li><a href="#">Drop Down 1</a></li>
-                            <li><a href="#">Drop Down 2</a></li>
-                            <li><a href="#">Drop Down 3</a></li>
-                            <li><a href="#">Drop Down 4</a></li>
+                            <li><a href="faculty.php">View All Faculty</a></li>
                         </ul>
                     </li>
-                    <li><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="dropdown"><a href="#"><span>Department</span> <i class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="department.php">View All Department</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="#"><span>Faculty Teacher</span> <i class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="#">View All Teacher</a></li>
+                            <li><a href="#">CSE Teacher</a></li>
+                            <li><a href="#">EEE Teacher</a></li>
+                            <li><a href="#">BBA Teacher</a></li>
+                            <li><a href="#">English Teacher</a></li>
+                            <li><a href="#">Civil Engineering Teacher</a></li>
+                            <li><a href="#">Architecture Teacher</a></li>
+                            <li><a href="#">Law Teacher</a></li>
+                            <li><a href="#">Islamic Studies Teacher</a></li>
+                            <li><a href="#">Public Health Teacher</a></li>
+                            <li><a href="#">Tourism and H.M Teacher</a></li>
+                            <li><a href="#">Bangla Teacher</a></li>
+                        </ul>
+                    </li>
+
                     <li><a class="getstarted" href="#about">Get Started</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>

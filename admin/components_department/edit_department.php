@@ -60,7 +60,7 @@ if(isset($_POST['update'])){
                             </div>
                             <div class="form-group">
                                 <label for="name">Head Description</label>
-                                <textarea class="form-control" cols="30" rows="5" name="head_description"><?php echo $head_description; ?></textarea>
+                                <textarea class="form-control" cols="30" rows="5" name="head_description" id="summernote"><?php echo $head_description; ?></textarea>
                             </div>
                             <div class="form-group">
                                 <img src="../upload/<?php echo $head_photo; ?>" class="img-fluid" style="border-radius: 50px; height: auto; width: 160px"/>

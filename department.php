@@ -10,14 +10,14 @@
             $source = $_GET['source'];
         }
         switch ($source){
-            case "all_faculty_view":
-                include "components/faculty_components/all_faculty_view.php";
+            case "all_department_view":
+                include "components/department_components/all_department_view.php";
                 break;
-            case "single_faculty_view":
-                include "components/faculty_components/single_faculty_view.php";
+            case "single_department_view":
+                include "components/department_components/single_department_view.php";
                 break;
             default:
-                include "components/faculty_components/all_faculty_view.php";
+                include "components/department_components/all_department_view.php";
         }
 
         ?>
