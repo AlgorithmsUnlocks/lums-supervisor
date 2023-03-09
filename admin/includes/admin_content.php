@@ -71,13 +71,86 @@
             <div class="card-body">
                 <div class="d-flex align-items-center justify-content-between justify-content-md-center justify-content-xl-between flex-wrap mb-4">
                     <div>
-                        <p class="mb-2 text-md-center text-lg-left">Total   </p>
+                        <p class="mb-2 text-md-center text-lg-left">Total Books Categories  </p>
+                        <?php
 
+                        $query = "SELECT * FROM books_category";
+                        $query_fetch = mysqli_query($connection,$query);
+                        $query_fetch_count = mysqli_num_rows($query_fetch);
+
+                        ?>
+                        <h1 class="mb-0"><?php echo $query_fetch_count; ?></h1>
 
                     </div>
                     <i class="typcn typcn-clipboard icon-xl text-secondary"></i>
                 </div>
-                <a href=" " class="btn btn-primary form-control">View </a>
+                <a href="book_categories.php?source=manage_categories" class="btn btn-primary form-control">View </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex align-items-center justify-content-between justify-content-md-center justify-content-xl-between flex-wrap mb-4">
+                    <div>
+                        <p class="mb-2 text-md-center text-lg-left">Total Books Authors  </p>
+                        <?php
+
+                        $query = "SELECT * FROM books_authors";
+                        $query_fetch = mysqli_query($connection,$query);
+                        $query_fetch_count = mysqli_num_rows($query_fetch);
+
+                        ?>
+                        <h1 class="mb-0"><?php echo $query_fetch_count; ?></h1>
+
+                    </div>
+                    <i class="typcn typcn-clipboard icon-xl text-secondary"></i>
+                </div>
+                <a href="book_author.php?source=manage_author" class="btn btn-primary form-control">View </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex align-items-center justify-content-between justify-content-md-center justify-content-xl-between flex-wrap mb-4">
+                    <div>
+                        <p class="mb-2 text-md-center text-lg-left">Total Books  </p>
+                        <?php
+
+                        $query = "SELECT * FROM books_list";
+                        $query_fetch = mysqli_query($connection,$query);
+                        $query_fetch_count = mysqli_num_rows($query_fetch);
+
+                        ?>
+                        <h1 class="mb-0"><?php echo $query_fetch_count; ?></h1>
+
+                    </div>
+                    <i class="typcn typcn-clipboard icon-xl text-secondary"></i>
+                </div>
+                <a href="books_lists.php?source=manage_books" class="btn btn-primary form-control">View </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex align-items-center justify-content-between justify-content-md-center justify-content-xl-between flex-wrap mb-4">
+                    <div>
+                        <p class="mb-2 text-md-center text-lg-left">Total Issue Books  </p>
+                        <?php
+
+                        $query = "SELECT * FROM issue_book";
+                        $query_fetch = mysqli_query($connection,$query);
+                        $query_fetch_count = mysqli_num_rows($query_fetch);
+
+                        ?>
+                        <h1 class="mb-0"><?php echo $query_fetch_count; ?></h1>
+
+                    </div>
+                    <i class="typcn typcn-clipboard icon-xl text-secondary"></i>
+                </div>
+                <a href="issue_books_lists.php?source=manage_issue_books" class="btn btn-primary form-control">View </a>
             </div>
         </div>
     </div>

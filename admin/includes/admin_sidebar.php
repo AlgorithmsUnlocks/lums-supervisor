@@ -91,24 +91,24 @@
             <div class="collapse" id="lus_authors">
                 <ul class="nav flex-column sub-menu">
 
-                    <li class="nav-item"> <a class="nav-link" href="">View Authors</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="">Add New Authors</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="book_author.php?source=add_author">Add Authors</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="book_author.php?source=manage_author">Manage Authors</a></li>
 
                 </ul>
             </div>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#lusl_lists" aria-expanded="false" aria-controls="ui-basic">
+            <a class="nav-link" data-toggle="collapse" href="#books" aria-expanded="false" aria-controls="ui-basic">
                 <i class="typcn typcn-user menu-icon"></i>
                 <span class="menu-title">Lists of Books</span>
                 <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="lusl_lists">
+            <div class="collapse" id="books">
                 <ul class="nav flex-column sub-menu">
 
-                    <li class="nav-item"> <a class="nav-link" href="">View Books</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="">Add New Books</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="books_lists.php?source=add_books">Add Books</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="books_lists.php?source=manage_books">Manage Books</a></li>
 
                 </ul>
             </div>
@@ -123,8 +123,8 @@
             <div class="collapse" id="lusl_issue">
                 <ul class="nav flex-column sub-menu">
 
-                    <li class="nav-item"> <a class="nav-link" href="">View Issues Books</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="">Add New Issues Books</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="issue_books_lists.php?source=add_issue_books">Add Issues Books</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="issue_books_lists.php?source=manage_issue_books">Manage Issues Books</a></li>
 
                 </ul>
             </div>

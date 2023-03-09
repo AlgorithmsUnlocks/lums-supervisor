@@ -119,3 +119,45 @@ tfoot.table_foot{
     font-size: 18px;
     line-height: 22px;
 }
+.addCategory {
+    background-color: #36b9cc;
+    padding: 25px 5px;
+    border-radius: 25px 75px 25px 75px;
+    border: none;
+}
+.form .details_books .title {
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 25px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: 2px dashed;
+    border-radius: 25px 75px 25px 75px;
+    padding: 10px 20px;
+    margin-bottom: 25px;
+}
+.form .details_books .feilds{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    color: white;
+}
+.form .details_books .feilds .form-group{
+    width: calc(100% / 2 - 15px);
+}
+.save_feild button {
+    width: calc(100% / 2);
+    height: 46px;
+    font-weight: 600;
+}
+.addBox {
+    background-color: #36b9cc;
+    padding: 25px 15px;
+    border-radius: 25px 75px 25px 75px;
+    border: none;
+
+}
