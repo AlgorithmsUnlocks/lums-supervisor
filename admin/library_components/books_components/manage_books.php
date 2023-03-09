@@ -31,7 +31,7 @@ $query_run = mysqli_query($connection,$query);
 
     <div class="table-responsive">
 
-        <table class="table table-bordered" cellspacing="0" width="100%" id="datatablesapi">
+        <table id="example" class="display" style="width:100%!important">
 
             <?php
 

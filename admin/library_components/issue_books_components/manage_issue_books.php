@@ -15,7 +15,7 @@ $query_run = mysqli_query($connection,$query);
 <div class="container-fluid manage_items m-3">
 
     <h4 class="text-center text-primary border p-2 m-3">
-        All Isse Books
+        All Issue Books
     </h4>
     <h4 class="text-center">
         <?php
@@ -31,7 +31,7 @@ $query_run = mysqli_query($connection,$query);
     <div class="table-responsive">
 
 
-        <table class="table table-bordered" cellspacing="0" width="100%" id="datatablesapi">
+        <table id="example" class="display" style="width:100%!important">
 
             <?php
 
