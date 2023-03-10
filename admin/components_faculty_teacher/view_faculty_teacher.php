@@ -4,7 +4,7 @@
 if(isset($_POST['register_teacher'])){
 
     $faculty_id = real_escape($_POST['faculty_id']);
-    $department_id = real_escape($_POST['department_id']);
+    $teacher_department_id = real_escape($_POST['teacher_department_id']);
     $teacher_name = real_escape($_POST['teacher_name']);
     $teacher_title = real_escape($_POST['teacher_title']);
     $teacher_email = real_escape($_POST['teacher_email']);
@@ -17,7 +17,7 @@ if(isset($_POST['register_teacher'])){
 
 //    if(!empty($faculty_id) && !empty($department_id) && !empty($teacher_name) && !empty($teacher_title) && !empty($teacher_email) && !empty($teacher_cell)){
 
-        $query = "INSERT INTO `faculty_teachers`(`faculty_id`, `department_id`, `teacher_name`, `teacher_title`, `teacher_email`, `teacher_cell`, `education_bg_conduct_course`, `teacher_photo`) VALUES ('$faculty_id','$department_id','$teacher_name','$teacher_title','$teacher_email','$teacher_cell','$education_bg_conduct_course','$teacher_photo')";
+        $query = "INSERT INTO `faculty_teachers`(`faculty_id`, `teacher_department_id`, `teacher_name`, `teacher_title`, `teacher_email`, `teacher_cell`, `education_bg_conduct_course`, `teacher_photo`) VALUES ('$faculty_id','$teacher_department_id','$teacher_name','$teacher_title','$teacher_email','$teacher_cell','$education_bg_conduct_course','$teacher_photo')";
 
         $query_run = mysqli_query($connection, $query);
 
@@ -69,7 +69,7 @@ if(isset($_POST['register_teacher'])){
                             </select>
                         </div>
                         <div class="form-group">
-                            <select class="form-control" name="department_id">
+                            <select class="form-control" name="teacher_department_id">
                                 <option value="">Select Department</option>
                                 <?php
                                 $query = "SELECT * FROM department";
@@ -173,7 +173,7 @@ if(isset($_POST['register_teacher'])){
 
                             $teacher_id = $row['teacher_id'];
                             $faculty_id = $row['faculty_id'];
-                            $department_id = $row['department_id'];
+                            $teacher_department_id = $row['teacher_department_id'];
                             $teacher_name= $row['teacher_name'];
                             $teacher_title= substr($row['teacher_title'],0,6);
                             $teacher_email = substr($row['teacher_email'],0,5);
@@ -185,7 +185,7 @@ if(isset($_POST['register_teacher'])){
                             <tr>
                                 <td><?php echo $teacher_id ?></td>
                                 <td><?php echo $faculty_id ?></td>
-                                <td><?php echo $department_id ?></td>
+                                <td><?php echo $teacher_department_id ?></td>
                                 <td><?php echo $teacher_name ?></td>
                                 <td><?php echo $teacher_title."..." ?></td>
                                 <td><?php echo $teacher_email."..." ?></td>

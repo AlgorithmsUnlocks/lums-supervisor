@@ -4,7 +4,6 @@ if(isset($_GET['id'])){
 }else{
     header("Location: faculty.php");
 }
-
 $query = "SELECT * FROM `department` WHERE department_id='$id'";
 $query_fetch_department = mysqli_query($connection,$query);
 confirmQuery($query_fetch_department);
@@ -25,7 +24,7 @@ while ($row = mysqli_fetch_assoc($query_fetch_department)) {
     <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-            <h2>Department Details</h2>
+            <h2><?php echo $department_name?></h2>
             <ol>
                 <li><a href="department.php">Department</a></li>
                 <li><?php echo $head_name; ?></li>
@@ -63,6 +62,51 @@ while ($row = mysqli_fetch_assoc($query_fetch_department)) {
 
                 </div>
             </div>
+
+        </div>
+        <div class="row gy-4">
+            <h3> All Teacher Information </h3>
+
+            <?php
+            $query = "SELECT * FROM `faculty_teachers` WHERE teacher_department_id=$id";
+            $query_run = mysqli_query($connection,$query);
+            $faculty_teachers_count = mysqli_num_rows($query_run);
+
+            if($faculty_teachers_count > 0){
+            while($row = mysqli_fetch_assoc($query_run)){
+
+            $teacher_id = $row['teacher_id'];
+            $faculty_id = $row['faculty_id'];
+            $teacher_department_id = $row['teacher_department_id'];
+            $teacher_name= $row['teacher_name'];
+            $teacher_title= $row['teacher_title'];
+            $teacher_email = $row['teacher_email'];
+            $teacher_cell = $row['teacher_cell'];
+            $education_bg_conduct_course = substr($row['education_bg_conduct_course'],0,20);
+            $teacher_photo = $row['teacher_photo'];
+            ?>
+
+            <div class="col-lg-4">
+
+                <div class="portfolio-info">
+                    <div class="text-center">
+                        <img src="upload/<?php echo $teacher_photo ?>" class="img-fluid" style="height: 150px; border-radius: 20px; box-shadow: 0px 0 30px rgb(18 66 101 / 8%); margin: 15px 0;"/>
+                        <h5 class="text-primary"> <?php echo $teacher_name ?></h5>
+                    </div>
+                    <div class="personals">
+<!--                        <p><strong>Department Name : </strong> --><?php //echo $teacher_department_id?><!--</p>-->
+                        <p><strong>Phone Number : </strong> <?php echo $teacher_cell?></p>
+                        <p><strong>Email Address : </strong> <?php echo $teacher_email?></p>
+                        <p><strong>Teacher Title : </strong> <?php echo $teacher_title?></p>
+                    </div>
+
+                </div>
+            </div>
+
+            <?php
+                }
+            }
+            ?>
 
         </div>
 
