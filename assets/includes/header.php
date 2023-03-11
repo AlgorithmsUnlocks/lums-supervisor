@@ -1,6 +1,6 @@
 <?php ob_start(); ?>
-<?php include "admin/includes/database.php"; ?>
 <?php include "admin/includes/functions.php"; ?>
+<?php include "admin/includes/database.php"; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -72,7 +72,7 @@
                         </ul>
                     </li>
 
-                    <li><a class="getstarted" href="#about">Get Started</a></li>
+                    <li><a class="getstarted" href="register.php">Sign Up</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
