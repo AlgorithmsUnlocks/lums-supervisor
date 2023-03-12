@@ -9,9 +9,7 @@
 <div class="main-panel">
     <div class="content-wrapper">
 
-
-           <?php if(($_SESSION['user_role'] == 'super_admin') || ($_SESSION['user_role'] == 'library_admin')){ ?>
-
+         <?php if(($_SESSION['user_role'] == 'super_admin') || ($_SESSION['user_role'] == 'bus_admin')){ ?>
 
         <!-- Main Content Panel -->
 
@@ -22,27 +20,27 @@
             $source = $_GET['source'];
         }
         switch ($source){
-            case "add_issue_books":
-                include "library_components/issue_books_components/add_issue_books.php";
+            case "add_categories":
+                include "bus_components/categories_components/add_categories.php";
                 break;
-            case "manage_issue_books":
-                include "library_components/issue_books_components/manage_issue_books.php";
+            case "manage_categories":
+                include "bus_components/categories_components/manage_categories.php";
                 break;
-            case "edit_issue_books":
-                include "library_components/issue_books_components/edit_issue_books.php";
+            case "edit_categories":
+                include "bus_components/categories_components/edit_categories.php";
                 break;
             default:
-                include "";
+                include "bus_components/categories_components/manage_categories.php";
         }
 
         ?>
 
-
              <?php
-           }else{
-               echo "Are you trying to access? Note that your are not allow!!! <span class='bg-danger p-3 text-white'> Entry Restricted</span>";
-           }
-           ?>
+         }else{
+             echo "Are you trying to access? Note that your are not allow!!! <span class='bg-danger p-3 text-white'> Entry Restricted</span>";
+         }
+         ?>
+
 
 
         <div class="row">

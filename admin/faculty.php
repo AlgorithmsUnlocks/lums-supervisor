@@ -9,9 +9,12 @@
 <div class="main-panel">
     <div class="content-wrapper">
 
+       <?php if($_SESSION['user_role'] === 'super_admin'){ ?>
+
         <!-- Main Content Panel -->
 
       <?php
+
       $source = "";
 
       if(isset($_GET['source'])){
@@ -30,7 +33,11 @@
 
       ?>
 
-
+      <?php
+}else{
+  echo "Are you trying to access? Note that your are not allow!!! <span class='bg-danger p-3 text-white'> Entry Restricted</span>";
+}
+?>
 
 
 

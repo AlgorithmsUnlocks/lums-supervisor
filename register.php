@@ -1,3 +1,5 @@
+<?php ob_start(); ?>
+<?php include "admin/includes/database.php"; ?>
 <!doctype html>
     <html lang="en">
     <head>
@@ -16,7 +18,11 @@
         <link href="assets/img/logo-lums.png" rel="icon">
 
     </head>
-<body id="register-page">
+<body id="register-page" onload="myFunction()">
+
+<div id="site-loader">
+
+</div>
 
 <div class="container-fluid">
     <div class="row justify-content-center">
@@ -25,11 +31,11 @@
                 <div class="row align-items-start">
 
                     <div class="col-md-12 text-center p-3">
-                        <h4>Create An Student Account</h4>
-                        <p>This is only for <span>Leading University </span> Student</p>
+                        <h4>Let's Create Student Account</h4>
+<!--                        <p>This is only for <span>Leading University </span> Student</p>-->
                     </div>
 
-                    <div class="col-md-6 align-itmes-center p-3">
+                    <div class="col-md-6 align-items-center p-3">
                         <div class="register-right-content">
 
                             <img src="upload/sign-up-screen.jpg" alt="" class="img-fluid rounded">
@@ -37,10 +43,10 @@
 
                                 <p class="text-center">Already Have A Student Account? <a href='login.php'>Sign In</a></p>
                                 <?php
-//                                session_start();
-                                if(isset($_SESSION['empty']) && $_SESSION['empty'] !=''){
-                                    echo '<h6 class="text-center empty_message">'. $_SESSION['empty'].'</h6>';
-                                    unset($_SESSION['empty']);
+                                session_start();
+                                if(isset($_SESSION["status"]) && $_SESSION["status"] !=''){
+                                    echo "<h6 class='text-center empty_message'>". $_SESSION["status"]."</h6>";
+                                    unset($_SESSION["status"]);
                                 }
                                 ?>
                             </div>
@@ -74,19 +80,34 @@
 
                                     <div class="form-group">
                                         <select name="student_department" class='form-control'>
-                                            <option value="">Choose Your Department</option>
-                                            <option value="Computer Science and Engineering"> CSE </option>
-                                            <option value="EEE">EEE</option>
-                                            <option value="Civil">Civil</option>
-                                            <option value="BBA">BBA</option>
-                                            <option value="Architecture">Architecture</option>
-                                            <option value="Islamic Studies">Islamic Studies</option>
-                                            <option value="Law">Law</option>
-                                            <option value="English">English</option>
+                                             <option value="">Select Department</option>
+                                            <?php
+                                            $query = "SELECT * FROM department";
+                                            $query_run = mysqli_query($connection,$query);
+                                            while($row = mysqli_fetch_assoc($query_run)){
+                                                $department_id = $row['department_id'];
+                                                $department_name = $row['department_name']; ?>
+                                                <option value="<?php echo $department_id ?>"><?php echo $department_name ?></option>
+                                            <?php
+                                            }
+                                            ?>
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <input type="date" class='form-control' name='student_dob'  placeholder='Date of Birth' require>
+                                    </div>
+                                    <div class="form-group">
+                                        <select name="user_blood_group" class='form-control'>
+                                            <option value="">Select blood group</option>
+                                            <option value="">A+</option>
+                                            <option value="">A-</option>
+                                            <option value="">B+</option>
+                                            <option value="">B-</option>
+                                            <option value="">O+</option>
+                                            <option value="">O-</option>
+                                            <option value="">AB+</option>
+                                            <option value="">AB-</option>
+                                        </select>
                                     </div>
                                     <div class="form-group">
                                         <input type="password" class='form-control' name='student_password' placeholder='Password' require>
@@ -96,7 +117,7 @@
                                     </div>
                                     <div class="form-group">
                                         <input type="file" class='form-control' name='student_avater' id="formFile" require>
-                                        <small>Upload your profile photo!</small>
+                                        <small class="text-danger">Upload your profile photo!</small>
                                     </div>
                                     <div class="submit-regiter text-center">
                                         <button type='submit' name='register_student' id='register-btn'>Create Account</button>
@@ -106,9 +127,7 @@
                         </div>
                     </div>
 
-
-
-
+                    
                 </div>
             </div>
         </div>
@@ -116,7 +135,14 @@
 
 </div>
 
+<script>
 
+    var preloader = document.getElementById("site-loader");
+    function myFunction(){
+        preloader.style.display = "none";
+    }
+
+</script>
 
 
 
@@ -125,8 +151,6 @@
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
-
 
 </body>
 </html>

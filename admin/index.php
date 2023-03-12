@@ -10,8 +10,14 @@
           <div class="content-wrapper">
 
 <!-- Main Content Panel -->
+          <?php
+          if(($_SESSION['user_role'] == 'super_admin') || ($_SESSION['user_role'] == 'library_admin')){
+              include("includes/admin_content.php");
+          }else{
+              echo "Are you trying to access? Note that your are not allow!!! <span class='bg-danger p-3 text-white'> Entry Restricted</span>";
+          }
 
-            <?php include("includes/admin_content.php"); ?>
+          ?>
 
               <div class="row">
 <!-- Main Content Panel End -->

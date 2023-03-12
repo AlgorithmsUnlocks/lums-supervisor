@@ -1,8 +1,12 @@
-<?php ob_start() ?>
-<?php session_start() ?>
 <?php include("includes/database.php"); ?>
 <?php include("includes/functions.php"); ?>
-
+<?php ob_start(); ?>
+<?php session_start(); ?>
+<?php
+if(!(isset($_SESSION['st_id']))){
+    header('Location: ../login.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,15 +49,20 @@
             <ul class="navbar-nav mr-lg-2">
                 <li class="nav-item nav-profile dropdown">
                     <a class="nav-link" href="#" data-toggle="dropdown" id="profileDropdown">
-                        <img src="images/faces/face5.jpg" alt="profile"/>
-                        <span class="nav-profile-name">Eugenia Mullins</span>
+
+                        <img src="../upload/<?php echo $_SESSION['profile']; ?>" alt="profile"/>
+                        <span class="nav-profile-name">
+                            <?php
+                            echo strtoupper($_SESSION['name']);
+                            ?>
+                        </span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-                        <a class="dropdown-item">
+                        <a class="dropdown-item" href="user_profiles.php">
                             <i class="typcn typcn-cog-outline text-primary"></i>
                             Settings
                         </a>
-                        <a class="dropdown-item">
+                        <a class="dropdown-item" href="../assets/includes/logout.php">
                             <i class="typcn typcn-eject text-primary"></i>
                             Logout
                         </a>
@@ -64,6 +73,11 @@
 
             <ul class="navbar-nav navbar-nav-right">
 
+                <li class="nav-item">
+                    <a class="nav-link d-flex justify-content-center align-items-center" href="../index.php">
+                        <h6 class="date mb-0">Front Page</h6>
+                    </a>
+                </li>
                 <li class="nav-item nav-date dropdown">
                     <a class="nav-link d-flex justify-content-center align-items-center" href="javascript:;">
                         <h6 class="date mb-0">Today : Mar 23</h6>
@@ -80,37 +94,5 @@
         </div>
     </nav>
 
-
-    <nav class="navbar-breadcrumb col-xl-12 col-12 d-flex flex-row p-0">
-        <div class="navbar-links-wrapper d-flex align-items-stretch">
-
-        </div>
-        <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
-            <ul class="navbar-nav mr-lg-2">
-                <li class="nav-item ml-0">
-                    <h4 class="mb-0">Dashboard</h4>
-                </li>
-                <li class="nav-item">
-                    <div class="d-flex align-items-baseline">
-                        <p class="mb-0">Home</p>
-                        <i class="typcn typcn-chevron-right"></i>
-                        <p class="mb-0">Main Dahboard</p>
-                    </div>
-                </li>
-            </ul>
-            <ul class="navbar-nav navbar-nav-right">
-                <li class="nav-item nav-search d-none d-md-block mr-0">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search..." aria-label="search" aria-describedby="search">
-                        <div class="input-group-prepend">
-                <span class="input-group-text" id="search">
-                  <i class="typcn typcn-zoom"></i>
-                </span>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </nav>
 
     <div class="container-fluid page-body-wrapper">

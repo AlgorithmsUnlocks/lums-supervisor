@@ -161,3 +161,12 @@ tfoot.table_foot{
     border: none;
 
 }
+.register_cards {
+    background: #844fc16e;
+}
+.rounded-top {
+    background: #844fc1!important;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
