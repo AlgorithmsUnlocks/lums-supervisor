@@ -1,14 +1,14 @@
 <?php
 if(isset($_POST['delete_btn'])){
     $id = $_POST['delete_id'];
-    $query = "DELETE FROM `books_authors` WHERE `id`= '$id' ";
+    $query = "DELETE FROM `bus_route` WHERE `id`= '$id' ";
     $query_run = mysqli_query($connection,$query);
     if($query_run){
-        $_SESSION['message_error'] = " Author is Delete Successfully";
-        header('Location: book_author.php?source=manage_author');
+        $_SESSION['message_error'] = " Books is Delete Successfully";
+        header('Location: bus_route.php?source=manage_route');
     }else{
         $_SESSION['message_error'] = "Something Wrong";
-        header('Location: book_author.php?source=manage_author');
+        header('Location: bus_route.php?source=manage_route');
     }
 }
 
@@ -16,13 +16,12 @@ if(isset($_POST['delete_btn'])){
 
 
 <?php
-// Select the table data
 
-$query = "SELECT * FROM `books_authors`";
+
+$query = "SELECT * FROM `bus_route`";
 $query_run = mysqli_query($connection,$query);
 
 ?>
-
 
 
 <div class="container manage_items">
@@ -46,16 +45,16 @@ $query_run = mysqli_query($connection,$query);
             <thead class="table_head">
             <tr>
                 <th> ID </th>
-                <th> Author Name</th>
-                <th>Creation Date</th>
+                <th> Route Number</th>
+                <th> Status</th>
                 <th>Action</th>
             </tr>
             </thead>
             <tfoot class="table_foot">
             <tr>
                 <th> ID </th>
-                <th> Author Name</th>
-                <th>Creation Date</th>
+                <th> Route Number</th>
+                <th>  Status</th>
                 <th>Action</th>
             </tr>
             </tfoot>
@@ -72,9 +71,8 @@ $query_run = mysqli_query($connection,$query);
 
                     <tr>
                         <td> <?php echo $row['id']; ?> </td>
-                        <td> <?php echo $row['name']; ?></td>
-
-                        <td> <?php  echo $row['creation_date']; ?></td>
+                        <td> <?php echo $row['route_number']; ?></td>
+                        <td> <?php  echo $row['category_status']; ?></td>
                         <td>
                             <div class="action-form">
                                 <form action="" method="POST">
@@ -84,7 +82,7 @@ $query_run = mysqli_query($connection,$query);
                                     </button>
                                 </form>
 
-                                <form action="book_author.php?source=edit_author" method="POST">
+                                <form action="bus_route.php?source=edit_route" method="POST">
                                     <input type="hidden" class="form-control" name="edit_id" value="<?php echo $row['id']; ?>">
                                     <button type="submit" class="btn btn-warning" name="edit_btn">
                                       Edit
@@ -109,4 +107,7 @@ $query_run = mysqli_query($connection,$query);
         </table>
     </div>
 </div>
+
+
+
 

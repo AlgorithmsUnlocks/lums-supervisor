@@ -158,48 +158,48 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" data-toggle="collapse" href="#" aria-expanded="false" aria-controls="ui-basic">
+                <a class="nav-link" data-toggle="collapse" href="#bus_list" aria-expanded="false" aria-controls="ui-basic">
                     <i class="typcn typcn-user menu-icon"></i>
-                    <span class="menu-title">Title</span>
+                    <span class="menu-title">Bus Lists</span>
                     <i class="menu-arrow"></i>
                 </a>
-                <div class="collapse" id="">
+                <div class="collapse" id="bus_list">
                     <ul class="nav flex-column sub-menu">
 
-                        <li class="nav-item"> <a class="nav-link" href="">...</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="">...</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="bus_lists.php?source=add_bus">Add Bus</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="bus_lists.php?source=manage_bus">Manage Bus</a></li>
 
                     </ul>
                 </div>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" data-toggle="collapse" href="#" aria-expanded="false" aria-controls="ui-basic">
+                <a class="nav-link" data-toggle="collapse" href="#issue_buses" aria-expanded="false" aria-controls="ui-basic">
                     <i class="typcn typcn-user menu-icon"></i>
-                    <span class="menu-title">Title</span>
+                    <span class="menu-title">Issued Buses</span>
                     <i class="menu-arrow"></i>
                 </a>
-                <div class="collapse" id="">
+                <div class="collapse" id="issue_buses">
                     <ul class="nav flex-column sub-menu">
 
-                        <li class="nav-item"> <a class="nav-link" href="">...</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="">...</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="issue_bus.php?source=add_issue_bus">Add Issue Bus</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="issue_bus.php?source=manage_issue_bus">Manage Issue Bus</a></li>
 
                     </ul>
                 </div>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" data-toggle="collapse" href="#" aria-expanded="false" aria-controls="ui-basic">
+                <a class="nav-link" data-toggle="collapse" href="#bus_route" aria-expanded="false" aria-controls="ui-basic">
                     <i class="typcn typcn-bookmark menu-icon"></i>
-                    <span class="menu-title">Title</span>
+                    <span class="menu-title">Bus Route</span>
                     <i class="menu-arrow"></i>
                 </a>
-                <div class="collapse" id="">
+                <div class="collapse" id="bus_route">
                     <ul class="nav flex-column sub-menu">
 
-                        <li class="nav-item"> <a class="nav-link" href="">...</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="">...</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="bus_route.php?source=add_route">Add Bus Route</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="bus_route.php?source=manage_route">Manage Bus Route</a></li>
 
                     </ul>
                 </div>
@@ -375,6 +375,86 @@
 
             <!-- Library Admin Part  End-->
         <?php }elseif($_SESSION['user_role'] === 'bus_admin'){?>
+
+            <li class="nav-item">
+                <a class="nav-link" href="index.php">
+                    <i class="typcn typcn-device-desktop menu-icon"></i>
+                    <span class="menu-title">Dashboard</span>
+                    <!--                <div class="badge badge-danger">new</div>-->
+                </a>
+            </li>
+
+            <div class="section-dividor"></div>
+
+            <!-- Bus Management Admin -->
+            <h6 class="text-primary">Bus Management</h6>
+
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#lus_bus" aria-expanded="false" aria-controls="ui-basic">
+                    <i class="typcn typcn-book menu-icon"></i>
+                    <span class="menu-title">Bus Category</span>
+                    <i class="menu-arrow"></i>
+                </a>
+                <div class="collapse" id="lus_bus">
+                    <ul class="nav flex-column sub-menu">
+
+                        <li class="nav-item"> <a class="nav-link" href="bus_categories.php?source=add_categories">Add Category</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="bus_categories.php?source=manage_categories">Manage Category</a></li>
+
+                    </ul>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#bus_list" aria-expanded="false" aria-controls="ui-basic">
+                    <i class="typcn typcn-user menu-icon"></i>
+                    <span class="menu-title">Bus Lists</span>
+                    <i class="menu-arrow"></i>
+                </a>
+                <div class="collapse" id="bus_list">
+                    <ul class="nav flex-column sub-menu">
+
+                        <li class="nav-item"> <a class="nav-link" href="bus_lists.php?source=add_bus">Add Bus</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="bus_lists.php?source=manage_bus">Manage Bus</a></li>
+
+                    </ul>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#issue_buses" aria-expanded="false" aria-controls="ui-basic">
+                    <i class="typcn typcn-user menu-icon"></i>
+                    <span class="menu-title">Issued Buses</span>
+                    <i class="menu-arrow"></i>
+                </a>
+                <div class="collapse" id="issue_buses">
+                    <ul class="nav flex-column sub-menu">
+
+                        <li class="nav-item"> <a class="nav-link" href="issue_bus.php?source=add_issue_bus">Add Issue Bus</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="issue_bus.php?source=manage_issue_bus">Manage Issue Bus</a></li>
+
+                    </ul>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#bus_route" aria-expanded="false" aria-controls="ui-basic">
+                    <i class="typcn typcn-bookmark menu-icon"></i>
+                    <span class="menu-title">Bus Route</span>
+                    <i class="menu-arrow"></i>
+                </a>
+                <div class="collapse" id="bus_route">
+                    <ul class="nav flex-column sub-menu">
+
+                        <li class="nav-item"> <a class="nav-link" href="bus_route.php?source=add_route">Add Bus Route</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="bus_route.php?source=manage_route">Manage Bus Route</a></li>
+
+                    </ul>
+                </div>
+            </li>
+
+            <!-- Bus Management Admin End-->
+
 
         <?php }elseif($_SESSION['user_role'] === 'teacher'){?>
 

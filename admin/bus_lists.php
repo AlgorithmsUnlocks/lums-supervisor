@@ -9,26 +9,31 @@
 <div class="main-panel">
     <div class="content-wrapper">
 
-         <?php if(($_SESSION['user_role'] == 'super_admin')){ ?>
+         <?php if(($_SESSION['user_role'] == 'super_admin') || ($_SESSION['user_role'] == 'bus_admin')){ ?>
+
         <!-- Main Content Panel -->
 
-      <?php
+        <?php
+        $source = "";
 
-      if(isset($_GET['source'])){
-          $source = $_GET['source'];
-      }else{
-          $source = "";
-      }
+        if(isset($_GET['source'])){
+            $source = $_GET['source'];
+        }
+        switch ($source){
+            case "add_bus":
+                include "bus_components/bus_lists_components/add_bus.php";
+                break;
+            case "manage_bus":
+                include "bus_components/bus_lists_components/manage_bus.php";
+                break;
+            case "edit_bus":
+                include "bus_components/bus_lists_components/edit_bus.php";
+                break;
+            default:
+                include "bus_components/bus_lists_components/manage_bus.php";
+        }
 
-      switch($source){
-          case 'edit_users':
-              include "users_components/edit_users.php";
-              break;
-          default:
-              include "users_components/view_all_users.php";
-      }
-
-      ?>
+        ?>
 
              <?php
          }else{

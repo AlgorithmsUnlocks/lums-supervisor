@@ -184,7 +184,7 @@
                         <p class="mb-2 text-md-center text-lg-left">Total Buses List  </p>
                         <?php
 
-                        $query = "SELECT * FROM buses_category";
+                        $query = "SELECT * FROM buses_listed";
                         $query_fetch = mysqli_query($connection,$query);
                         $query_fetch_count = mysqli_num_rows($query_fetch);
 
@@ -194,7 +194,7 @@
                     </div>
                     <i class="typcn typcn-clipboard icon-xl text-secondary"></i>
                 </div>
-                <a href="issue_books_lists.php?source=manage_issue_books" class="btn btn-primary form-control">View </a>
+                <a href="bus_lists.php?source=manage_bus" class="btn btn-primary form-control">View </a>
             </div>
         </div>
     </div>
@@ -206,7 +206,7 @@
                         <p class="mb-2 text-md-center text-lg-left">Total Buses Issue  </p>
                         <?php
 
-                        $query = "SELECT * FROM buses_category";
+                        $query = "SELECT * FROM buses_issued";
                         $query_fetch = mysqli_query($connection,$query);
                         $query_fetch_count = mysqli_num_rows($query_fetch);
 
@@ -216,7 +216,7 @@
                     </div>
                     <i class="typcn typcn-clipboard icon-xl text-secondary"></i>
                 </div>
-                <a href="issue_books_lists.php?source=manage_issue_books" class="btn btn-primary form-control">View </a>
+                <a href="issue_bus.php?source=manage_issue_bus" class="btn btn-primary form-control">View </a>
             </div>
         </div>
     </div>
@@ -228,7 +228,7 @@
                         <p class="mb-2 text-md-center text-lg-left">Total Buses Route  </p>
                         <?php
 
-                        $query = "SELECT * FROM buses_category";
+                        $query = "SELECT * FROM bus_route";
                         $query_fetch = mysqli_query($connection,$query);
                         $query_fetch_count = mysqli_num_rows($query_fetch);
 
@@ -238,7 +238,7 @@
                     </div>
                     <i class="typcn typcn-clipboard icon-xl text-secondary"></i>
                 </div>
-                <a href="issue_books_lists.php?source=manage_issue_books" class="btn btn-primary form-control">View </a>
+                <a href="bus_route.php?source=manage_route" class="btn btn-primary form-control">View </a>
             </div>
         </div>
     </div>

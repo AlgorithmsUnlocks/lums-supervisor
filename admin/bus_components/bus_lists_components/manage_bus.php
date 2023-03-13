@@ -1,14 +1,14 @@
 <?php
 if(isset($_POST['delete_btn'])){
     $id = $_POST['delete_id'];
-    $query = "DELETE FROM `books_list` WHERE `id`= '$id' ";
+    $query = "DELETE FROM `buses_listed` WHERE `id`= '$id' ";
     $query_run = mysqli_query($connection,$query);
     if($query_run){
-        $_SESSION['message_error'] = " Books is Delete Successfully";
-        header('Location: books_lists.php?source=manage_books');
+        $_SESSION['message_error'] = "Delete Successfully";
+        header('Location: bus_lists.php?source=manage_bus');
     }else{
         $_SESSION['message_error'] = "Something Wrong";
-        header('Location: books_lists.php?source=manage_books');
+        header('Location: bus_lists.php?source=manage_bus');
     }
 }
 
@@ -16,19 +16,13 @@ if(isset($_POST['delete_btn'])){
 
 
 <?php
-
-$query = "SELECT * FROM `books_list";
+$query = "SELECT * FROM `buses_listed`";
 $query_run = mysqli_query($connection,$query);
 
 ?>
 
 
-<div class="container-fluid manage_items m-3">
-
-    <h4 class="text-center text-primary border p-2 m-3">
-        All Books
-    </h4>
-
+<div class="container manage_items">
     <div class="table-responsive">
 
         <table id="example" class="display" style="width:100%!important">
@@ -49,26 +43,24 @@ $query_run = mysqli_query($connection,$query);
             <thead class="table_head">
             <tr>
                 <th> ID </th>
-                <th>Books Cover</th>
-                <th> Book Name</th>
-                <th> ISBN Number </th>
-                <th>Author Name</th>
-                <th>Books Cateory</th>
-                <th>Number of Copies</th>
-                <th>Book Self</th>
+                <th> Bus Licence</th>
+                <th> Code Name</th>
+                <th> Capacity</th>
+                <th> Driver Name</th>
+                <th> Driver Contact Number</th>
+                <th> Category Status</th>
                 <th>Action</th>
             </tr>
             </thead>
             <tfoot class="table_foot">
             <tr>
                 <th> ID </th>
-                <th>Books Cover</th>
-                <th> Book Name</th>
-                <th> ISBN Number </th>
-                <th>Author Name</th>
-                <th>Books Cateory</th>
-                <th>Number of Copies</th>
-                <th>Book Self</th>
+                <th> Bus Licence</th>
+                <th> Code Name</th>
+                <th> Capacity</th>
+                <th> Driver Name</th>
+                <th> Driver Contact Number</th>
+                <th> Category Status</th>
                 <th>Action</th>
             </tr>
             </tfoot>
@@ -85,16 +77,12 @@ $query_run = mysqli_query($connection,$query);
 
                     <tr>
                         <td> <?php echo $row['id']; ?> </td>
-                        <td>
-                            <img src="../upload/<?php echo $row['book_photo']; ?>" class="img-fluid" style="border-radius: 50px; height: auto; width: 160px"/>
-                        </td>
-
-                        <td> <?php echo $row['book_name']; ?></td>
-                        <td> <?php  echo $row['isbn_number']; ?></td>
-                        <td> <?php echo $row['book_author']; ?> </td>
-                        <td> <?php echo $row['book_category']; ?></td>
-                        <td> <?php echo $row['book_copies']; ?></td>
-                        <td> <?php echo $row['book_self']; ?></td>
+                        <td> <?php echo $row['bus_licence']; ?></td>
+                        <td> <?php echo $row['code_name']; ?></td>
+                        <td> <?php  echo $row['capacity']; ?></td>
+                        <td> <?php  echo $row['driver_name']; ?></td>
+                        <td> <?php  echo $row['driver_contact_num']; ?></td>
+                        <td> <?php  echo $row['category_status']; ?></td>
                         <td>
                             <div class="action-form">
                                 <form action="" method="POST">
@@ -104,10 +92,10 @@ $query_run = mysqli_query($connection,$query);
                                     </button>
                                 </form>
 
-                                <form action="books_lists.php?source=edit_books" method="POST">
+                                <form action="bus_lists.php?source=edit_bus" method="POST">
                                     <input type="hidden" class="form-control" name="edit_id" value="<?php echo $row['id']; ?>">
                                     <button type="submit" class="btn btn-warning" name="edit_btn">
-                                     Edit
+                                       Edit
                                     </button>
                                 </form>
                             </div>
