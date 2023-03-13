@@ -54,77 +54,83 @@
                     </div>
 
                     <div class="col-lg-6 p-3">
-                        <div class="register-left-content">
-                            <div class="form-info text-center">
 
+                        <?php if(isset($_SESSION['st_id'])){ ?>
+                        <h4 class="text-primary text-center">You are Logged In</h4>
+                        <p>Home ?? <a href='index.php'>Home </a></p>
+                        <?php }else{ ?>
+                            <div class="register-left-content">
+                                <div class="form-info text-center">
 
-                            </div>
-                            <form action="login_action.php" method="post" enctype="multipart/form-data">
-                                <div class="register-form">
-                                    <div class="form-group">
-                                        <input type="text" class='form-control' name='student_name' placeholder='Student Name' require>
-
-                                    </div>
-                                    <div class="form-group">
-
-                                        <input type="email" class='form-control' name='student_email' placeholder='Email Address' require>
-                                    </div>
-                                    <div class="form-group">
-
-                                        <input type="text" class='form-control' name='student_phone' placeholder='Phone Number' require>
-                                    </div>
-                                    <div class="form-group">
-
-                                        <input type="text" class='form-control' name='student_id' placeholder='Stuent Id.' require>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <select name="student_department" class='form-control'>
-                                             <option value="">Select Department</option>
-                                            <?php
-                                            $query = "SELECT * FROM department";
-                                            $query_run = mysqli_query($connection,$query);
-                                            while($row = mysqli_fetch_assoc($query_run)){
-                                                $department_id = $row['department_id'];
-                                                $department_name = $row['department_name']; ?>
-                                                <option value="<?php echo $department_id ?>"><?php echo $department_name ?></option>
-                                            <?php
-                                            }
-                                            ?>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="date" class='form-control' name='student_dob'  placeholder='Date of Birth' require>
-                                    </div>
-                                    <div class="form-group">
-                                        <select name="user_blood_group" class='form-control'>
-                                            <option value="">Select blood group</option>
-                                            <option value="">A+</option>
-                                            <option value="">A-</option>
-                                            <option value="">B+</option>
-                                            <option value="">B-</option>
-                                            <option value="">O+</option>
-                                            <option value="">O-</option>
-                                            <option value="">AB+</option>
-                                            <option value="">AB-</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" class='form-control' name='student_password' placeholder='Password' require>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" class='form-control' name='student_cfpassword'  placeholder='Confirm Password' require>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="file" class='form-control' name='student_avater' id="formFile" require>
-                                        <small class="text-danger">Upload your profile photo!</small>
-                                    </div>
-                                    <div class="submit-regiter text-center">
-                                        <button type='submit' name='register_student' id='register-btn'>Create Account</button>
-                                    </div>
                                 </div>
-                            </form>
-                        </div>
+                                <form action="assets/includes/action.php" method="post" enctype="multipart/form-data">
+                                    <div class="register-form">
+                                        <div class="form-group">
+                                            <input type="text" class='form-control' name='student_name' placeholder='Student Name' require>
+
+                                        </div>
+                                        <div class="form-group">
+
+                                            <input type="email" class='form-control' name='student_email' placeholder='Email Address' require>
+                                        </div>
+                                        <div class="form-group">
+
+                                            <input type="text" class='form-control' name='student_phone' placeholder='Phone Number' require>
+                                        </div>
+                                        <div class="form-group">
+
+                                            <input type="text" class='form-control' name='student_id' placeholder='Stuent Id.' require>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <select name="student_department" class='form-control'>
+                                                <option value="">Select Department</option>
+                                                <?php
+                                                $query = "SELECT * FROM department";
+                                                $query_run = mysqli_query($connection,$query);
+                                                while($row = mysqli_fetch_assoc($query_run)){
+                                                    $department_id = $row['department_id'];
+                                                    $department_name = $row['department_name']; ?>
+                                                    <option value="<?php echo $department_id ?>"><?php echo $department_name ?></option>
+                                                    <?php
+                                                }
+                                                ?>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="date" class='form-control' name='student_dob'  placeholder='Date of Birth' require>
+                                        </div>
+                                        <div class="form-group">
+                                            <select name="user_blood_group" class='form-control'>
+                                                <option value="">Select blood group</option>
+                                                <option value="A+">A+</option>
+                                                <option value="A-">A-</option>
+                                                <option value="B+">B+</option>
+                                                <option value="B-">B-</option>
+                                                <option value="O+">O+</option>
+                                                <option value="O-">O-</option>
+                                                <option value="AB+">AB+</option>
+                                                <option value="AB-">AB-</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class='form-control' name='student_password' placeholder='Password' require>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class='form-control' name='student_cfpassword'  placeholder='Confirm Password' require>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="file" class='form-control' name='student_avater' id="formFile" require>
+                                            <small class="text-danger">Upload your profile photo!</small>
+                                        </div>
+                                        <div class="submit-regiter text-center">
+                                            <button type='submit' name='register_student' id='register-btn'>Create Account</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        <?php }
+                        ?>
                     </div>
 
                     

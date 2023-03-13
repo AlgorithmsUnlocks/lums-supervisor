@@ -1,4 +1,5 @@
 <?php ob_start(); ?>
+<?php session_start(); ?>
 <?php include "admin/includes/functions.php"; ?>
 <?php include "admin/includes/database.php"; ?>
 
@@ -55,24 +56,24 @@
                             <li><a href="department.php">View All Department</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown"><a href="#"><span>Faculty Teacher</span> <i class="bi bi-chevron-down"></i></a>
+                    <li class="dropdown"><a href="#"><span>Books List</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
-                            <li><a href="#">View All Teacher</a></li>
-                            <li><a href="#">CSE Teacher</a></li>
-                            <li><a href="#">EEE Teacher</a></li>
-                            <li><a href="#">BBA Teacher</a></li>
-                            <li><a href="#">English Teacher</a></li>
-                            <li><a href="#">Civil Engineering Teacher</a></li>
-                            <li><a href="#">Architecture Teacher</a></li>
-                            <li><a href="#">Law Teacher</a></li>
-                            <li><a href="#">Islamic Studies Teacher</a></li>
-                            <li><a href="#">Public Health Teacher</a></li>
-                            <li><a href="#">Tourism and H.M Teacher</a></li>
-                            <li><a href="#">Bangla Teacher</a></li>
+                            <li><a href="books.php?source=all_books_view">All Books</a></li>
                         </ul>
                     </li>
 
-                    <li><a class="getstarted" href="register.php">Sign Up</a></li>
+
+                    <?php
+
+                    if(isset($_SESSION['st_id'])){ ?>
+                        <li><a class="getstarted" href="admin/user_profiles.php">Profile</a></li>
+                  <?php  }else{ ?>
+
+                        <li><a class="getstarted" href="register.php">Sign Up</a></li>
+                        <li><a class="getstarted1" href="login.php">Sign In</a></li>
+                    <?php }
+
+                    ?>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->

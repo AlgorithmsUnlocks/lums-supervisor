@@ -80,7 +80,17 @@ if(!(isset($_SESSION['st_id']))){
                 </li>
                 <li class="nav-item nav-date dropdown">
                     <a class="nav-link d-flex justify-content-center align-items-center" href="javascript:;">
-                        <h6 class="date mb-0">Today : Mar 23</h6>
+                        <h6 class="date mb-0">
+                            <?php
+                            $current_date = "Today : ".date('l, d F, y');
+                            date_default_timezone_set('Asia/Dhaka');
+                            $curretn_time = date('h:i:sa');
+
+                            echo $current_date." ".$curretn_time;
+
+
+                            ?>
+                        </h6>
                         <i class="typcn typcn-calendar"></i>
                     </a>
                 </li>

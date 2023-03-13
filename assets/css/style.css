@@ -1940,3 +1940,54 @@ section#services {
 .counters {
   margin-bottom: 25px;
 }
+.search-form form {
+  margin-top: 30px;
+  background: #fff;
+  padding: 6px 10px;
+  position: relative;
+  border-radius: 5px;
+  text-align: left;
+  border: 1px solid #cde5f6;
+}
+.search-form form input[type=text] {
+  border: 0;
+  padding: 4px 8px;
+  width: calc(100% - 100px);
+  outline: none;
+}
+.search-form form input[type=submit] {
+  position: absolute;
+  top: -1px;
+  right: -2px;
+  bottom: -1px;
+  border: 0;
+  background: none;
+  font-size: 18px;
+  padding: 0 20px 2px 20px;
+  background: #dc3545;
+  color: #fff;
+  transition: 0.3s;
+  border-radius: 0 5px 5px 0;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+.search_section_design {
+  margin-top: 100px;
+  min-height: 400px;
+}
+.search_section_design h2.not-found {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navbar .getstarted1, .navbar .getstarted1:focus {
+  background: #ffffff;
+  padding: 8px 20px;
+  margin-left: 20px;
+  border-radius: 4px;
+  color: #084298;
+  border: 1px solid;
+}
+.navbar .getstarted1:hover, .navbar .getstarted1:focus:hover {
+  color: #fff;
+  background: #3194db;
+}

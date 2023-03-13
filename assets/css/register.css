@@ -117,3 +117,10 @@ body#register-page{
     background: #fff url('../../upload/Ripple-loader.gif') no-repeat center;
     z-index: 99999;
 }
+.empty_message {
+    background: #ffc107;
+    padding: 10px;
+    color: #000409;
+    font-size: 16px;
+    font-weight: 800;
+}

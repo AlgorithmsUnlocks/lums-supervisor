@@ -11,7 +11,8 @@
     $_SESSION['profile'] = NULL;
     $_SESSION['user_role'] = NULL;
     $_SESSION['create_date'] = NULL;
-
+    session_unset();
+    session_destroy();
     header('Location: ../../login.php');
 
 ?>

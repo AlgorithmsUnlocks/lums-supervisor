@@ -64,8 +64,17 @@ while ($row = mysqli_fetch_assoc($query_fetch_department)) {
             </div>
 
         </div>
+        <h3> All Teacher Information </h3>
+
+        <div class="col-md-6 m-auto">
+            <div class="search-form">
+                <form action="department.php?source=search_teacher_result" method="post">
+                    <input type="text" name="search_text" placeholder="Search">
+                    <input type="submit" value="Search" name="search_btn">
+                </form>
+            </div>
+        </div>
         <div class="row gy-4">
-            <h3> All Teacher Information </h3>
 
             <?php
             $query = "SELECT * FROM `faculty_teachers` WHERE teacher_department_id=$id";

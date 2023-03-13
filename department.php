@@ -16,6 +16,9 @@
             case "single_department_view":
                 include "components/department_components/single_department_view.php";
                 break;
+            case "search_teacher_result":
+                include "components/department_components/search_teacher_result.php";
+                break;
             default:
                 include "components/department_components/all_department_view.php";
         }
