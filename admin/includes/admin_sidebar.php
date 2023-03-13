@@ -209,26 +209,6 @@
 
             <div class="section-dividor"></div>
 
-            <h6 class="text-primary">Blood Helper (LUMS)</h6>
-
-            <li class="nav-item">
-                <a class="nav-link" data-toggle="collapse" href="#blood_donor" aria-expanded="false" aria-controls="ui-basic">
-                    <i class="typcn typcn-bookmark menu-icon"></i>
-                    <span class="menu-title">Blood Donor Lists</span>
-                    <i class="menu-arrow"></i>
-                </a>
-                <div class="collapse" id="blood_donor">
-                    <ul class="nav flex-column sub-menu">
-
-                        <li class="nav-item"> <a class="nav-link" href="">View Donor List</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="">Add New Donor</a></li>
-
-                    </ul>
-                </div>
-            </li>
-
-            <div class="section-dividor"></div>
-
             <h6 class="text-primary">Project Thesis Proposal (LUMS)</h6>
 
             <li class="nav-item">

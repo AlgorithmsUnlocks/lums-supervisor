@@ -154,6 +154,116 @@
             </div>
         </div>
     </div>
+    <div class="col-md-4 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex align-items-center justify-content-between justify-content-md-center justify-content-xl-between flex-wrap mb-4">
+                    <div>
+                        <p class="mb-2 text-md-center text-lg-left">Total Buses Category  </p>
+                        <?php
+
+                        $query = "SELECT * FROM buses_category";
+                        $query_fetch = mysqli_query($connection,$query);
+                        $query_fetch_count = mysqli_num_rows($query_fetch);
+
+                        ?>
+                        <h1 class="mb-0"><?php echo $query_fetch_count; ?></h1>
+
+                    </div>
+                    <i class="typcn typcn-clipboard icon-xl text-secondary"></i>
+                </div>
+                <a href="bus_categories.php?source=manage_categories" class="btn btn-primary form-control">View </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex align-items-center justify-content-between justify-content-md-center justify-content-xl-between flex-wrap mb-4">
+                    <div>
+                        <p class="mb-2 text-md-center text-lg-left">Total Buses List  </p>
+                        <?php
+
+                        $query = "SELECT * FROM buses_category";
+                        $query_fetch = mysqli_query($connection,$query);
+                        $query_fetch_count = mysqli_num_rows($query_fetch);
+
+                        ?>
+                        <h1 class="mb-0"><?php echo $query_fetch_count; ?></h1>
+
+                    </div>
+                    <i class="typcn typcn-clipboard icon-xl text-secondary"></i>
+                </div>
+                <a href="issue_books_lists.php?source=manage_issue_books" class="btn btn-primary form-control">View </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex align-items-center justify-content-between justify-content-md-center justify-content-xl-between flex-wrap mb-4">
+                    <div>
+                        <p class="mb-2 text-md-center text-lg-left">Total Buses Issue  </p>
+                        <?php
+
+                        $query = "SELECT * FROM buses_category";
+                        $query_fetch = mysqli_query($connection,$query);
+                        $query_fetch_count = mysqli_num_rows($query_fetch);
+
+                        ?>
+                        <h1 class="mb-0"><?php echo $query_fetch_count; ?></h1>
+
+                    </div>
+                    <i class="typcn typcn-clipboard icon-xl text-secondary"></i>
+                </div>
+                <a href="issue_books_lists.php?source=manage_issue_books" class="btn btn-primary form-control">View </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex align-items-center justify-content-between justify-content-md-center justify-content-xl-between flex-wrap mb-4">
+                    <div>
+                        <p class="mb-2 text-md-center text-lg-left">Total Buses Route  </p>
+                        <?php
+
+                        $query = "SELECT * FROM buses_category";
+                        $query_fetch = mysqli_query($connection,$query);
+                        $query_fetch_count = mysqli_num_rows($query_fetch);
+
+                        ?>
+                        <h1 class="mb-0"><?php echo $query_fetch_count; ?></h1>
+
+                    </div>
+                    <i class="typcn typcn-clipboard icon-xl text-secondary"></i>
+                </div>
+                <a href="issue_books_lists.php?source=manage_issue_books" class="btn btn-primary form-control">View </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex align-items-center justify-content-between justify-content-md-center justify-content-xl-between flex-wrap mb-4">
+                    <div>
+                        <p class="mb-2 text-md-center text-lg-left">Total Register Users </p>
+                        <?php
+
+                        $query = "SELECT * FROM users";
+                        $query_fetch = mysqli_query($connection,$query);
+                        $query_fetch_count = mysqli_num_rows($query_fetch);
+
+                        ?>
+                        <h1 class="mb-0"><?php echo $query_fetch_count; ?></h1>
+
+                    </div>
+                    <i class="typcn typcn-clipboard icon-xl text-secondary"></i>
+                </div>
+                <a href="users.php" class="btn btn-primary form-control">View </a>
+            </div>
+        </div>
+    </div>
 
 </div>
 
