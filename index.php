@@ -5,8 +5,6 @@
 
   <main id="main">
 
-con
-
   </main><!-- End #main -->
 
 <?php include ("assets/includes/footer.php")?>

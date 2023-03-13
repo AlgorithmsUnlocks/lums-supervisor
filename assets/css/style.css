@@ -1797,11 +1797,11 @@ section {
 }
 
 #footer .footer-top .footer-contact p {
-  font-size: 14px;
+  font-size: 18px;
   line-height: 24px;
   margin-bottom: 0;
   font-family: "Raleway", sans-serif;
-  color: #777777;
+  color: #ffffff;
 }
 
 #footer .footer-top h4 {
@@ -1840,10 +1840,11 @@ section {
 }
 
 #footer .footer-top .footer-links ul a {
-  color: #777777;
+  color: #ffffff;
   transition: 0.3s;
   display: inline-block;
   line-height: 1;
+  font-size: 18px;
 }
 
 #footer .footer-top .footer-links ul a:hover {
@@ -1998,4 +1999,10 @@ section#services {
   padding: 5px;
   border-color: #fff;
   box-shadow: 0px 0 35px 0 rgba(0, 0, 0, 0.08);
+}
+.footer-top {
+  background-image: url(../../upload/bg.png)!important;
+  background-position: center!important;
+  background-size: cover!important;
+  min-height: 300px;
 }
